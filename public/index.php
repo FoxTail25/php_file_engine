@@ -12,18 +12,24 @@ $layout = str_replace('{{ footer in layout }}', $footer , $layout);
 if($url != '/') {
 	$content = 'view' . $url . '.php';
 } else {
-	$content = 'view/index.html';
-	$title = '';
+	$content = 'view/index.php';
+	// $title = '';
 }
 
 if(file_exists($content)) {
 	$content = file_get_contents($content);
+
 } else {
 	header('HTTP/1.0 404 Not Found');
 	$content = file_get_contents('view/404.html');
 }
 
+preg_match('#{{ title: "(.+?)" }}#', $content, $match);
+$title = $match[1];
+$content = preg_replace('#{{ title: "(.+?)" }}#', '', $content);
+
 $layout = str_replace('{{ content in layout }}', $content , $layout);
+$layout = str_replace('{{ title in layout }}', $title , $layout);
 
 echo $layout;
 ?>

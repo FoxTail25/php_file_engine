@@ -1,1 +1,4 @@
-<div>page 3</div>
+{{ title: "page 3" }}
+<div>
+	page 3
+</div>
