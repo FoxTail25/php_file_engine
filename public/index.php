@@ -13,6 +13,7 @@ if($url != '/') {
 	$content = 'view' . $url . '.php';
 } else {
 	$content = 'view/index.html';
+	$title = '';
 }
 
 if(file_exists($content)) {
