@@ -3,16 +3,16 @@
 $url = $_SERVER['REQUEST_URI']; // поучаем адрес запроса
 // echo '$_SERVER["REQUEST_URI"] =' . $url;
 
-$layout = file_get_contents('layout.html'); // берём из файла макет страницы
+$layout = file_get_contents('layout.php'); // берём из файла макет страницы
 $header = file_get_contents('view/header.html'); // берем из файла макет "хедера"
 $layout = str_replace('{{ header in layout }}', $header , $layout); // заменяем в макете страницы "обозначение хедера" на сам "хедер"
 $footer = file_get_contents('view/footer.html'); // берем из файла макет "футера"
 $layout = str_replace('{{ footer in layout }}', $footer , $layout); // заменяем в макете страницы "обозначение футера" на сам "футера"
 
-if($url != '/') {
-	$content = 'view' . $url . '.php';  // если адрес запроса не равен "/" то в переменую $content запичывается путь доступа к файлу.
-} else {
-	$content = 'view/index.php'; // если адрес запроса ревен "/" в переменную $content записывается путь к файлу с содержимым "по умолчанию"
+if($url != '/') { // если адрес запроса не равен "/" то в переменую $content запичывается путь доступа к файлу.
+	$content = 'view' . $url . '.php'; 
+} else { // если адрес запроса ревен "/" в переменную $content записывается путь к файлу с содержимым "по умолчанию"
+	$content = 'view/index.php';
 }
 
 if(file_exists($content)) { //Если файл существует по пути указанному в переменной $content то в переменную $content подгдружается содержимое этого файла
