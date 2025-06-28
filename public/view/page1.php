@@ -1,6 +1,6 @@
 {{ title: ".htaccess" }}
 <div>
-	<h2>Использование htaccess в движке PHP</h2>
+	<h2>Использование .htaccess в движке PHP</h2>
 	<p class="bg-warning p-2">
 	Важно! Не открывайте .htaccess с помощью «Блокнота», если используете Windows. Так в файл запишутся дополнительные символы, которые сервер Apache может обработать неправильно. Лучше всего редактировать файл через консоль или Notepad++.
 	</p>
@@ -71,5 +71,17 @@
 		</pre>
 	</code>
 	<br/>
-	Рекомендую прочитать <a href="https://skillbox.ru/media/code/chto-takoe-htaccess-i-kak-ego-nastroit/">Более подробные объяснения о файле .htaccess</a>
+	Так же рекомендую к ознакомлению:
+	<ul>
+		<li> настройка файла .htaccess
+			<a href="https://code.mu/ru/php/book/prime/driver/htaccess/" target="_blank">
+				code.mu
+			</a>
+		</li>
+		<li>более подробные объяснения о файле .htaccess 
+			<a href="https://skillbox.ru/media/code/chto-takoe-htaccess-i-kak-ego-nastroit/" target="_blank">
+				skillbox
+			</a>
+		</li>
+	</ul>	
 </div>
